@@ -1,0 +1,16 @@
+.slideshow {
+    margin: 0 auto;
+    overflow: hidden;
+    max-width: 260px;
+  }
+  
+  .slideshow-slider {
+    white-space: nowrap;
+    transition: ease 1000ms;
+  }
+  
+  .slide {
+    display: inline-block;
+    width: 275px;
+  }
+  

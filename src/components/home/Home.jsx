@@ -1,18 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import PreLoader from '../../common/js/PreLoader';
-import useInfiniteScroll from "../../common/js/useInfiniteScroll";
 import InfiniteScroll from "react-infinite-scroll-component";
-import ProductList from './ProductList';
+import Product from './Product';
 const Home = () => {
     const [products, setProducts] = useState([]);
     const [hasMore, setHasMore] = useState(true);
-    const [isFetching, setIsFetching] = useState(false);
 
     useEffect(() => {
         fetchMoreListItems();
     }, []);
     async function fetchMoreListItems() {
-        setIsFetching(true);
         let url = `https://run.mocky.io/v3/05e9651d-528e-4d7c-a60b-bae8f09684c6`;
         try {
             const res = await fetch(url);
@@ -26,10 +23,9 @@ const Home = () => {
                 setHasMore(isMore)
                 setProducts([...products, ...resultProducts])
             }
-            setIsFetching(false);
         } catch (error) {
             console.error(error);
-            setIsFetching(false);
+            setHasMore(false);
         }
     }
     return (
@@ -41,11 +37,18 @@ const Home = () => {
                 loader={<PreLoader />}
                 endMessage={
                     <p style={{ textAlign: "center" }}>
-                        <b>Yay! You have seen it all</b>
+                        <b>You have seen all the products!</b>
                     </p>
                 }
             >
-                <ProductList products={products} />
+                <div className="product-list">
+                    {products.map((item, index) => (
+                        <div key={index}>
+                            <Product item={item} />
+                        </div>
+                    ))}
+                </div>
+
             </InfiniteScroll>
         </>
     );

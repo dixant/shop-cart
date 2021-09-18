@@ -1,14 +1,14 @@
 .product-list {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     padding: 10px;
 }
 .product-card {
     display: inline-flex;
     flex-direction: column;
-    max-width: 275px;
+    max-width: 270px;
     padding: 10px;
 }
 .product-card:hover {
@@ -16,9 +16,11 @@
     border: 2px solid #f1f1f1;
     cursor: pointer;
 }
+.product-image {
+    align-self: center;
+}
 .product-image img {
-    max-width: 275px;
-    z-index: 2;
+    max-width: 265px;
 }
 .product-add-cart {
     height: 30px;
