@@ -1,13 +1,13 @@
-import Header from '../header/Header';
-import './App.css';
+import React from 'react';
+import Routes from '../route/Route'
+import './App.css'
 
 function App() {
-  return (
-    <div className="App">
-      <Route />
-     <Header />
-    </div>
-  );
+    return (
+        <div className="App">
+            <Routes />
+        </div>
+    )
 }
 
-export default App;
+export default App

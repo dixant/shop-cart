@@ -1,35 +1,38 @@
 .App-header {
     background-color: #282c34;
-    min-height: 50px;
     display: flex;
     flex-direction: row;
     align-items: center;
-   flex-wrap: wrap;
+    flex-wrap: wrap;
     font-size: 1rem;
-    color: white;
-  }
-  .App-header-left {
-      flex: 1;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-     flex-wrap: wrap;
-    justify-content: left;
-  }
-  .App-header-right {
+    color: #fff;
+    position: fixed;
+    width: 100vw;
+    height: 85px;
+    top: 0;
+}
+.App-header-left {
     flex: 1;
     display: flex;
     flex-direction: row;
     align-items: center;
-   flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+.App-header-right {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
     justify-content: right;
     padding-right: 24px;
-  }
-  .cart-icon svg {
-      width: 35px;
-      height: 35px;
-  }
-  .cart-badge {
+}
+.cart-icon svg {
+    width: 35px;
+    height: 35px;
+}
+.cart-badge {
     background-color: #f00;
     border: 1px solid #fff;
     display: inline-flex;
@@ -44,20 +47,20 @@
     width: auto;
     height: auto;
     min-width: 20px;
-  }
-  .cart-text {
-      font-weight: bold;
-  }
-  .cart-button {
+}
+.cart-text {
+    font-weight: bold;
+}
+.cart-button {
     display: flex;
     flex-direction: row;
     align-items: center;
-   flex-wrap: wrap;
-   padding: 10px;
-  }
-  .button:hover {
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.button:hover {
     box-shadow: 0px 0px 4px #cccccc;
     border-radius: 4px;
     border: 1px solid;
     cursor: pointer;
-  }
+}
