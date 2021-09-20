@@ -9,19 +9,16 @@ const Home = () => {
     useEffect(() => {
         fetchMoreListItems();
     }, []);
+    
     async function fetchMoreListItems() {
-        let url = `https://run.mocky.io/v3/05e9651d-528e-4d7c-a60b-bae8f09684c6`;
         try {
-            const res = await fetch(url);
+            const res = await fetch(`/fetch-products?length=${products.length}`);
             const response = await res.json();
-            if (response && response.products) {
-                const currentLength = products.length || 0;
-                const maxLength = currentLength + 10;
-                let { products: responseProducts } = response;
-                let resultProducts = responseProducts.filter((item, index) => index >= currentLength && index < maxLength);
-                let isMore = (products.length + resultProducts.length) < responseProducts.length;
+            console.log({ responseUI: response })
+            const { isMore, products: newList = [], status } = response;
+            if (status === "SUCCESS") {
                 setHasMore(isMore)
-                setProducts([...products, ...resultProducts])
+                setProducts([...products, ...newList])
             }
         } catch (error) {
             console.error(error);
